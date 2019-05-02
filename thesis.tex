@@ -1,0 +1,63 @@
+% Template by: Nicholas Fajardo
+% Original Template by: 
+\documentclass[12pt]{report}
+
+% Basic Package Imports
+\usepackage{graphicx}
+
+% Formatting
+\usepackage{setspace}
+\setlength{\textheight}{8.63in}
+\setlength{\textwidth}{5.9in}
+\setlength{\topmargin}{-0.2in}
+\setlength{\oddsidemargin}{0.3in}
+\setlength{\evensidemargin}{0.3in}
+\setlength{\headsep}{0.0in}
+
+% Document header formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\setlength{\headsep}{0.2in}
+
+% Bibliography imports
+\usepackage[style=ieee]{biblatex}
+\addbibresource{Sources/FirstSet.bib}
+\addbibresource{Sources/SecondSet.bib}
+
+\begin{document}
+
+% Title, Abstract, and Acknowledgements
+\pagenumbering{gobble}
+\input{ThesisConventions/title.tex}
+\newpage
+\doublespacing
+\input{ThesisConventions/abstract.tex}
+\input{ThesisConventions/acknowledgements.tex}
+
+% Page Guides
+\pagenumbering{roman}
+\setcounter{page}{1}
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+
+% Chapters
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{Chapters/introduction.tex}
+\input{Chapters/background.tex}
+\input{Chapters/materials_and_methods.tex}
+\input{Chapters/results.tex}
+\input{Chapters/discussion.tex}
+\input{Chapters/conclusion.tex}
+\clearpage
+
+% Bibliography
+\pagestyle{empty}
+\printbibliography
+
+\end{document}
